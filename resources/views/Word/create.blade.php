@@ -1,6 +1,6 @@
 <x-layout>
     <div class="min-h-screen flex items-center justify-center bg-gray-100">
-        <form action="" method="POST" class="bg-white p-6 rounded-lg shadow-lg space-y-4 w-full max-w-sm">
+        <form action="{{route("words.store")}}" method="POST" class="bg-white p-6 rounded-lg shadow-lg space-y-4 w-full max-w-sm">
             @csrf
 
             <div>
