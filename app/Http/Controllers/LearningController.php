@@ -6,6 +6,7 @@ use App\Models\Word;
 use App\Services\SM2Algorithm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class LearningController extends Controller
 {
@@ -26,6 +27,8 @@ class LearningController extends Controller
         $request->validate([
             "difficulty"=>"required|max:100"
         ]);
+
+        Gate::authorize("learningStore",[Word::class,$word]);
 
         $word=Auth::user()->words()->where("word",$word)->first();
         if(!$word){

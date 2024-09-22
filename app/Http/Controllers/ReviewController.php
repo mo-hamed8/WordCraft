@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Word;
 use App\Services\SM2Algorithm;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ReviewController extends Controller
 {
@@ -20,17 +22,20 @@ class ReviewController extends Controller
     }
     public function show($word){
         $user = Auth::user();
+
+        Gate::authorize("reviewShow",[Word::class,$word]);
+
         $word = $user->words()->where("word", $word)->first();
-        if ($word) {
-            return view("review.show", ["data" => $word]);
-        } else {
-            return abort(404);
-        }
+        
+        return view("review.show", ["data" => $word]);
+    
     }
     public function store(Request $request, $word){
         $request->validate([
             "difficulty" => "required|max:100"
         ]);
+
+        Gate::authorize("reviewStore",[Word::class,$word]);
 
         $user = Auth::user();
         $word = $user->words()->where("word", $word)->with("sm2")->first();
