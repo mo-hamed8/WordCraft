@@ -22,8 +22,8 @@ Route::middleware('auth')->group(function () {
     Route::get("words/create",[WordController::class,"create"])->name("words.create");
     Route::post("words",[WordController::class,"store"])->name("words.store");
 
+    Route::post("learning/{word}",[LearningController::class,"store"])->name("learning.store");
     Route::get("learning",[LearningController::class,"show"])->name("learning.show");
-    Route::post("learning",[LearningController::class,"store"])->name("learning.store");
 
     Route::get("reviews",[ReviewController::class,"index"])->name("review.index");
     Route::get("reviews/{word}",[ReviewController::class,"show"])->name("review.show");
