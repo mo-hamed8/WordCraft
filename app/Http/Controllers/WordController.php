@@ -37,7 +37,7 @@ class WordController extends Controller
         // Remove duplicate words
         $words = array_unique($words);
 
-        return redirect(route("word.create"));
+        return redirect(route("words.create"));
     }
 
     private function processWords($text): array {
