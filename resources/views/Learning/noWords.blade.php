@@ -7,7 +7,7 @@
         </p>
 
         <!-- Call-to-Action Button -->
-        <a href="{{route("word.create")}}" class="inline-block px-6 py-3 text-white bg-blue-500 rounded-md text-lg font-medium hover:bg-blue-600 transition duration-300">
+        <a href="{{route("words.create")}}" class="inline-block px-6 py-3 text-white bg-blue-500 rounded-md text-lg font-medium hover:bg-blue-600 transition duration-300">
             Add Your Words Now
         </a>
         

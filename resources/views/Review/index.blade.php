@@ -11,7 +11,7 @@
         @if($words)
         @foreach ($words as $item)
         <div class="bg-blue-100 text-blue-900 p-6 rounded-lg shadow-md">
-            <a href="" class="text-2xl font-semibold hover:underline">
+            <a href="{{route("review.show",$item->word)}}" class="text-2xl font-semibold hover:underline">
                 {{$item->word}}
             </a>
         </div> 

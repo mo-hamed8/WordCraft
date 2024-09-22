@@ -20,7 +20,7 @@
                     
                     <div class="mb-4">
                         <h3 class="text-lg font-semibold text-gray-800">Example:</h3>
-                        <p class="italic text-gray-600">{{$data["examples"][0]["example"]}}</p>
+                        <p class="italic text-gray-600">{{$data["example"]}}</p>
                     </div>
                     
                     <div class="mb-6">
@@ -32,7 +32,7 @@
 
             <div class="bg-gray-100 p-4 rounded-md mb-6">
                 <p class="text-gray-800 font-semibold mb-3">How would you rate the difficulty of this word?</p>
-                <form method="POST" action="">
+                <form method="POST" action="{{route("review.store",$data["word"])}}">
                     @csrf
                     <label class="block mb-2">
                         <input type="radio" name="difficulty" value="easy" class="mr-2 text-indigo-600 focus:ring focus:ring-indigo-200">

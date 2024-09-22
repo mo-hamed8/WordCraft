@@ -15,7 +15,7 @@ class LearningController extends Controller
         $word=$user->words()->where("status","new")->orderByDesc("repetition")->first();
 
         if(!$word){
-            return view("learn.no_words");
+            return view("learning.noWords");
         }
 
         $data=$this->addData($word);
