@@ -28,7 +28,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        // the old value is dashboard
+        return redirect()->intended(route('words.create', absolute: false));
     }
 
     /**

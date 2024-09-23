@@ -45,6 +45,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        // the old value is dashboard
+        return redirect(route('words.create', absolute: false));
     }
 }
