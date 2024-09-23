@@ -4,6 +4,7 @@ use App\Http\Controllers\LearningController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\WordController;
+use App\Services\OpenAIService;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

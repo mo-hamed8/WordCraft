@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Word;
+use App\Services\OpenAIService;
 use App\Services\SM2Algorithm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -71,11 +72,8 @@ class LearningController extends Controller
     }
 
     private function chatgpt($word){
-        $wordData = [
-            'definition' => 'to engage in an activity for fun or recreation',
-            'part_of_speech' => 'verb',
-            'example' => 'The children love to play outside.'
-        ];
+        $ai=new OpenAIService();
+        $wordData=$ai->getWordData($word);
         return $wordData;
     }
 }
