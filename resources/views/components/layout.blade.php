@@ -25,6 +25,14 @@
         <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
            <ul class="space-y-2 font-medium">
               <li>
+                 <a href="{{route("words.index")}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
+                     <path d="M12 0c-1.1 0-2 .9-2 2v5h1V2c0-.6.4-1 1-1s1 .4 1 1v5h1V2c0-1.1-.9-2-2-2zm6.5 7.1c-1.4-1.5-3.2-2.4-5.2-2.6V5H12v-.5c-2 .2-3.8 1.1-5.2 2.6-1.6 1.7-2.5 3.9-2.5 6.2s.9 4.5 2.5 6.2c1.5 1.6 3.5 2.5 5.6 2.5 2 0 4-.9 5.5-2.5 1.6-1.7 2.5-3.9 2.5-6.2s-.9-4.5-2.5-6.2zM12 22c-1.8 0-3.5-.7-4.7-2.1-1.2-1.3-1.8-3.1-1.8-5 0-3.8 2.8-7 6.5-7.9V19c1.3.2 2.5.5 3.8 1.1-1.1.8-2.5 1.3-3.8 1.3zm0-6V9.5c2.3.8 4 3.2 4 6s-1.7 5.2-4 6v-5.5z"/>
+                   </svg>
+                    <span class="ms-3">all Words</span>
+                 </a>
+              </li>
+              <li>
                  <a href="{{route("words.create")}}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
                      <path d="M12 0c-1.1 0-2 .9-2 2v5h1V2c0-.6.4-1 1-1s1 .4 1 1v5h1V2c0-1.1-.9-2-2-2zm6.5 7.1c-1.4-1.5-3.2-2.4-5.2-2.6V5H12v-.5c-2 .2-3.8 1.1-5.2 2.6-1.6 1.7-2.5 3.9-2.5 6.2s.9 4.5 2.5 6.2c1.5 1.6 3.5 2.5 5.6 2.5 2 0 4-.9 5.5-2.5 1.6-1.7 2.5-3.9 2.5-6.2s-.9-4.5-2.5-6.2zM12 22c-1.8 0-3.5-.7-4.7-2.1-1.2-1.3-1.8-3.1-1.8-5 0-3.8 2.8-7 6.5-7.9V19c1.3.2 2.5.5 3.8 1.1-1.1.8-2.5 1.3-3.8 1.3zm0-6V9.5c2.3.8 4 3.2 4 6s-1.7 5.2-4 6v-5.5z"/>

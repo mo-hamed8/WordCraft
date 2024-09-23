@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 class WordController extends Controller
 {
     //
+    public function index(){
+        $user=Auth::user();
+        $words=$user->words()->where("status","new")->get("word");
+        return view("Word.index",["words"=>$words]);
+    }
+
     public function create(){
         return view("Word.create");
     }
@@ -57,5 +63,16 @@ class WordController extends Controller
         // Return the array of words
         return $words;
     
+    }
+
+
+    public function iKnow($word){
+        $user=Auth::user();
+        $word=$user->words()->where("word",$word)->first();
+        if($word){
+            $word->status="done";
+            $word->save();
+        }
+        return redirect(route("words.index"));
     }
 }

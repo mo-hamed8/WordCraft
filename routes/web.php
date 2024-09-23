@@ -20,8 +20,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get("words",[WordController::class,"index"])->name("words.index");
     Route::get("words/create",[WordController::class,"create"])->name("words.create");
     Route::post("words",[WordController::class,"store"])->name("words.store");
+
+    Route::post("words/{word}",[WordController::class,"iKnow"])->name("words.iKnow");
 
     Route::post("learning/{word}",[LearningController::class,"store"])->name("learning.store");
     Route::get("learning",[LearningController::class,"show"])->name("learning.show");
