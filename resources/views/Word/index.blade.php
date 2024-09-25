@@ -15,6 +15,7 @@
                     <button type="submit" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">I know this</button>
                 </form>
             </li>
+            <hr>
             @endforeach
         @endif
     </ul>
