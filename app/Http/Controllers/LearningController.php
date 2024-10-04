@@ -14,8 +14,15 @@ class LearningController extends Controller
     //
     public function show(){
         $user=Auth::user();
-        $word=$user->words()->where("status","new")->orderByDesc("repetition")->first();
+        // 
+        $word=$user->words()->where("status","new")->where("definition","!=",null)->orderByDesc("repetition")->first();
 
+        // Check if the word information already exists in the database
+        if($word){
+            return view("learning.show",["data"=>$word]);
+        }
+
+        $word=$user->words()->where("status","new")->orderByDesc("repetition")->first();
         if(!$word){
             return view("learning.noWords");
         }
