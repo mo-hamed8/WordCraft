@@ -68,8 +68,8 @@ class LearningController extends Controller
     }
 
 
-    private function addData(Word $word){
-        $data=$this->chatgpt($word->word);
+    static function addData(Word $word){
+        $data=self::chatgpt($word->word);
         $word->definition=$data["definition"];
         $word->part_of_speech=$data["part_of_speech"];
         $word->example=$data["example"];
@@ -78,7 +78,7 @@ class LearningController extends Controller
         return $data;
     }
 
-    private function chatgpt($word){
+    static function chatgpt($word){
         $ai=new OpenAIService();
         $wordData=$ai->getWordData($word);
         return $wordData;
