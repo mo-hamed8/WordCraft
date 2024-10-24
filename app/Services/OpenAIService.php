@@ -25,7 +25,7 @@ class OpenAIService
                 'json' => [
                     'model' => 'gpt-3.5-turbo',
                     'messages' => [
-                        ['role' => 'user', 'content' => "Provide the definition, part of speech, and an example for the word '{$word}' in JSON format. The response should have the following fields: 'definition','part_of_speech','example'"]
+                        ['role' => 'user', 'content' => "Provide the definition, part of speech, an example, and the Arabic meaning for the word '{$word}' in JSON format. The response should have the following fields: 'definition', 'part_of_speech', 'example', 'arabic_meaning'"]
                     ],
                     'max_tokens' => 100,
                 ],

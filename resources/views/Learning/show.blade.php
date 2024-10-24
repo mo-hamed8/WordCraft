@@ -12,6 +12,12 @@
                 <h3 class="text-lg font-semibold text-gray-800">Definition:</h3>
                 <p class="text-gray-700">{{$data["definition"]}}</p>
             </div>
+
+            <!-- New section for Arabic meaning -->
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold text-gray-800">معنى الكلمة بالعربية:</h3>
+                <p class="text-gray-700">{{$data["arabic_meaning"]}}</p>
+            </div>
             
             <div class="mb-4">
                 <h3 class="text-lg font-semibold text-gray-800">Example:</h3>
