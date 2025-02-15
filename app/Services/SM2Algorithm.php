@@ -57,8 +57,9 @@ class SM2Algorithm {
 
     // Method to calculate the next review date
     public function getNextReviewDate() {
-        $nextReviewTimestamp = strtotime("+$this->interval days", strtotime($this->lastReviewDate));
-        return date('Y-m-d', $nextReviewTimestamp);
+        // $nextReviewTimestamp = strtotime("+$this->interval days", strtotime($this->lastReviewDate));
+        // return date('Y-m-d', $nextReviewTimestamp);
+        return Carbon::parse($this->lastReviewDate)->addDays($this->interval)->format('Y-m-d');
     }
 
     // Method to reset the interval, EF, and repetitions
@@ -99,7 +100,8 @@ class SM2Algorithm {
     }
 
     public function getLastReviewDate() {
-        return $this->lastReviewDate;
+        //return $this->lastReviewDate;
+        return Carbon::today()->toDateString();
     }
 }
 
